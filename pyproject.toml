@@ -1,0 +1,31 @@
+[project]
+name = "publications-support"
+version = "0.1.0"
+description = "Animated explainers for videos about how I build software, made with Manim."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "manim>=0.19",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.6",
+]
+
+# Installed in editable mode so scenes can import `scenes.common` however
+# manim is invoked.
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["scenes"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+# Scenes use `from manim import *` by convention.
+ignore = ["F403", "F405"]

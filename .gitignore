@@ -1,0 +1,23 @@
+# Manim output (renders, partial movie files, TeX cache)
+media/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.ruff_cache/
+
+# Editors
+.idea/
+.vscode/
+
+# Secrets
+.env*
+
+# Local-only assistant and planning docs (not published)
+CLAUDE.md
+.claude/
+notes/
+
+# OS files
+.DS_Store
